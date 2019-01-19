@@ -1,0 +1,37 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipython = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-tornado = "*"
+pytest-xdist = "*"
+yapf = "*"
+
+[packages]
+alembic = "*"
+dataclasses-json = "*"
+graphene-sqlalchemy = "*"
+graphene-tornado = "*"
+pytz = "*"
+PyYAML = "*"
+sqlalchemy = "*"
+tornado = "*"
+streaming-form-data = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+lint = "pylint --max-line-length 120 src tests"
+test = "pytest --cov=src -m 'not stress' -n auto"
+test_full = "pytest --cov=src -n auto"
+formatter = "yapf -i -r src tests"
+ci = "bash -c \"yapf -i -r src tests && pytest -n auto && pylint --max-line-length 120 src tests \""
+
+[pipenv]
+allow_prereleases = true

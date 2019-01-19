@@ -1,0 +1,2 @@
+class PermissionDomainError(Exception):
+    pass

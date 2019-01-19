@@ -1,0 +1,16 @@
+general:
+  environment: test
+
+tornado:
+  test:
+    debug: false
+    cookie_secret: "El Psy Congroo"
+    xsrf_cookies: false
+    port: 8888
+    max_body_size: 536870912000000
+    cache_directory: /tmp
+
+database:
+  test:
+    drivername: sqlite
+    database: database.db
